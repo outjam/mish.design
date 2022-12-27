@@ -1,16 +1,16 @@
-import React from 'react'
-import HeaderPage from '../components/HeaderPage/HeaderPage'
-import EmailForm from '../components/EmailForm/EmailForm'
-import Footer from '../components/Footer/Footer'
+import React from "react";
+import ServiceMain from "../components/ServiceMain/ServiceMain";
+import EmailForm from "../components/EmailForm/EmailForm";
+import Footer from "../components/Footer/Footer";
 
 function Service() {
-    return (
-        <div>
-            <HeaderPage name="Услуги" />
-            <EmailForm />
-            <Footer />
-        </div>
-    )
+  return (
+    <div>
+      <ServiceMain />
+      <EmailForm />
+      <Footer />
+    </div>
+  );
 }
 
-export default Service
+export default Service;
