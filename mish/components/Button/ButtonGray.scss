@@ -1,0 +1,11 @@
+.buttonGray {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(64px);
+    backdrop-filter: blur(64px);
+    transition: 0.3s;
+    
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}

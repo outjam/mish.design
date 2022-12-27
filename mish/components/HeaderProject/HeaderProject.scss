@@ -1,0 +1,102 @@
+.headerProject {
+    width: 100%;
+    height: 50vh;
+    min-height: 600px;
+    position: relative;
+    padding: 2em;
+    display: flex;
+    overflow: hidden;
+    animation: 1.2s slidein;
+    
+    @keyframes slidein {
+        from {
+            margin-top: 64px;
+            opacity: 0;
+            filter: blur(8px);
+        }
+        to {
+            margin-top: 0%;
+            opacity: 1;
+            filter: blur(0);
+        }
+    }
+    
+    .coverProject {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-position: bottom;
+            z-index: 1;
+        }
+        
+        span {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 47.55%, rgba(0, 0, 0, 0.5) 76.07%, #000000 100%);
+            z-index: 2;
+        }
+    }
+    
+    .projectInfo {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding: 0 0 2em 0;
+        z-index: 3;
+        
+        .mark_new {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 16px;
+            background-color: var(--red);
+            color: var(--white);
+            padding: 0.5em;
+            width: max-content;
+            margin-bottom: 1em;
+            text-transform: uppercase;
+        }
+        
+        .description {
+            max-width: 50%;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        
+        h2 {
+            margin-bottom: 0.25em;
+        }
+        
+        p {
+            margin-bottom: 0.5em;
+            
+            small {
+                opacity: 0.5;
+                font-size: 16px;
+            }
+        }
+        .card__tag {
+            margin-top: 1em;
+            display: flex;
+            gap: 0.5em;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .headerUser {
+        .avatarUser {
+            width: 200px;
+            height: 200px;
+            right: 2em;
+            top: 4em;
+        }
+    }
+}

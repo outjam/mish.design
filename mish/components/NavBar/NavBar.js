@@ -2,34 +2,30 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 import NavItem from "./NavItem";
-import Button from "../Button/Button";
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { useEffect, useRef } from 'react';
+import ButtonGray from "../Button/ButtonGray";
+import ButtonRed from "../Button/ButtonRed";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-
 const MENU_LIST = [
-    { text: "Компания", href: "/company" },
-    { text: "Проекты", href: "/project" },
-    { text: "Услуги", href: "/service" },
-    { text: "Блог", href: "/blog" },
-    { text: "Контакты", href: "/contact" },
-  ];
-  const NavBar = () => {
+  { text: "Компания", href: "/company" },
+  { text: "Проекты", href: "/project" },
+  { text: "Услуги", href: "/service" },
+  { text: "Блог", href: "/blog" },
+  { text: "Контакты", href: "/contact" },
+];
+const NavBar = () => {
   const [navActive, setNavActive] = useState(null);
-  const [activeIdx, setActiveIdx] = useState(-1);  
+  const [activeIdx, setActiveIdx] = useState(-1);
 
   return (
     <header>
-      
       <nav className={`nav`}>
         <Link href={"/"} className="logo">
-            <h1 className="logo"></h1>
+          <h1 className="logo"></h1>
         </Link>
-
 
         <div className={`${navActive ? "active" : ""} nav__menu-list`}>
           {MENU_LIST.map((menu, idx) => (
@@ -48,10 +44,10 @@ const MENU_LIST = [
       <div className="nav__action">
         <div className="nav__button-bar">
           <Link href="../../assets/Page.pdf" target="_blank" download>
-            <Button name="Скачать презентацию"></Button>
+            <ButtonGray name="Скачать презентацию" />
           </Link>
           <Link href="/brief">
-            <Button name="Заказать проект"></Button>
+            <ButtonRed name="Обсудить проект" />
           </Link>
         </div>
         <div
@@ -67,4 +63,4 @@ const MENU_LIST = [
   );
 };
 
-export default NavBar
+export default NavBar;

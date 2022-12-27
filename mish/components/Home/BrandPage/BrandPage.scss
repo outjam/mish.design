@@ -17,3 +17,14 @@
     gap: 4em;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .brandPage {
+     padding: 0.5em;
+     gap: 2em;
+     
+     div {
+    gap: 2em;
+  }
+  }
+}

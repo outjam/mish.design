@@ -1,0 +1,192 @@
+.serviceMain {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4em;
+    overflow-x: hidden;
+    
+    .serviceMain_Navigation {
+        width: 33vw;
+        min-width: 300px;
+        height: 100vh;
+        position: sticky;
+        top: calc(64px);
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        gap: 1em;
+        
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        
+        ul {
+            padding: 1em;
+            li {
+                cursor: pointer;
+                padding: 1em;
+                transition: 0.3s;
+                border-radius: 0.5em;
+                
+                &:hover {
+                    background: #ffffff15;
+                }
+            }
+        }
+    }
+    .serviceMain_Content_List{
+        .serviceMain_Content {
+                width: 100%;
+                height: auto;
+                padding-top: calc(64px + 4em);
+                
+                .serviceMain_Content_Headline {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0 1em;
+                    position: relative;
+                    
+                    h1 {
+                        font-size: 48px;
+                        line-height: 120%;
+                    }
+                    .serviceMain_Content_Logo-Unit {
+                        width: 80px;
+                        height: 80px;
+                        margin-right: 1em;
+                    }
+                    .unionProductDesign {
+                        background-image: url("http://culture3k.com/UnionProductDesign.svg");
+                    }
+                    .unionProductDesign-video {
+                        width: 50vh;
+                        height: 50vh;
+                        object-fit: cover;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                    .unionCoommunicationtDesign {
+                        background-image: url("http://culture3k.com/UnionCoommunicationtDesign.svg");
+                    }
+                    .unionDevelopDesign {
+                        background-image: url("http://culture3k.com/UnionDevelopDesign.svg");
+                    }
+                    .unionReSearchDesign {
+                        background-image: url("http://culture3k.com/UnionReSearchDesign.svg");
+                    }
+                }
+                .serviceMain_Content_Description {
+                    width: 100%;
+                    padding: 0 1em;
+                    margin-top: 1em;
+                    
+                    p {
+                        font-size: 16px;
+                        line-height: 120%;
+                        max-width: 75%;
+                    }
+                    .serviceMain_Content_Description_tag {
+                        margin-top: 2em;
+                        
+                        ul {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 0.5em;
+                            
+                            li {
+                                color: var(--txtGray);
+                                border: 1px solid var(--separator);
+                                padding: 0.5em 1em;
+                                border-radius: 2em;
+                                transition: 0.3s;
+                                cursor: pointer;
+                                
+                                &:hover {
+                                    background: #ffffff10;
+                                }
+                            }
+                        }
+                    }
+                }
+                .serviceMain_Content_Service-Info {
+                    padding: 0 1em;
+                    margin-top: 4em;
+                    
+                    h4 {
+                        font-size: 24px;
+                        line-height: 120%;
+                        margin-bottom: 1em;
+                    }
+                    ul {
+                        li {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5em;
+                            padding: 1em 0;
+                            border-bottom: 1px solid var(--separator);
+                            
+                            &:last-of-type {
+                            border-bottom: none;
+                            }
+                            
+                            p {
+                                font-size: 16px;
+                                line-height: 130%;
+                                max-width: 75%;
+                                
+                                small {
+                                    font-size: 14px;
+                                    line-height: 120%;
+                                    opacity: 0.5;
+                                }
+                            }
+                        }
+                    }
+                }
+                .serviceMain_Content_Service-Brand {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1em;
+                    padding: 2em 1em 1em 1em;
+                }
+                button {
+                    margin: 2em 1em;
+                }
+        }   
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .serviceMain {
+        flex-direction: column;
+        
+        .serviceMain_Navigation {
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            overflow-x: scroll;
+            background: var(--bg);
+            position: relative;
+            
+            ul {
+                display: flex;
+                gap: 0.5em;
+                padding: 0 1em;
+                
+                li {
+                     white-space: nowrap;
+                     background: #ffffff15;
+                     
+                     &:hover {
+                         background: #ffffff25;
+                     }
+                }
+            }
+        }
+    }
+}

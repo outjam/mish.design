@@ -10,6 +10,18 @@
   padding: 1em 2em 0 2em;
   transition: 0.3s;
   z-index: 1000;
+  animation: 1.2s alternate fadein;
+    
+    @keyframes fadein {
+        from {
+            margin-top: 64px;
+            opacity: 0;
+        }
+        to {
+            margin-top: 0%;
+            opacity: 1;
+        }
+    }
 
   .headline {
     font-size: 72px;

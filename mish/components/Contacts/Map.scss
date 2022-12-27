@@ -1,0 +1,34 @@
+.maps {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 2em;
+    grid-row-gap: 1em;
+    padding: 2em;
+    
+    .maps_Row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        
+        iframe {
+            margin-bottom: 1em;
+        }
+        
+        p {
+            font-size: 24px;
+            line-height: 120%;
+            
+            small {
+                font-size: 18px;
+                opacity: 0.5;
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .maps {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

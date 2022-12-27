@@ -14,3 +14,16 @@
     border: 2px solid blue;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .tag {
+  padding: 1em 1.5em;
+  border: 2px solid var(--separator);
+  border-radius: 4em;
+  
+  span {
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+  }
+}

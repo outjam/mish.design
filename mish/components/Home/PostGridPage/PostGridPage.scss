@@ -3,9 +3,28 @@
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 1em;
   grid-row-gap: 4em;
-  padding: 8em 1em 4em 1em;
+  padding: 8em 2em 4em 2em;
 
   span {
     padding: 4em 0;
+  }
+}
+
+.buttonMore_HomeMain {
+  margin: -8em 0 8em 0;
+}
+
+@media screen and (max-width: 800px) {
+  .postGridPage {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardSpacer1n,
+  .cardSpacer2n,
+  .cardSpacer3n,
+  .cardSpacer4n {
+    transform: none !important;
+  }
+  .postGridPage span {
+    padding: 0 !important;
   }
 }

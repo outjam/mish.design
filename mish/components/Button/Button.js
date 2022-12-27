@@ -1,12 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Button(props) {
-    
-    return (
-        <button>
-            {props.name}
-        </button>
-    )
+  return <button>{props.name}</button>;
 }
 
-export default Button
+export default Button;

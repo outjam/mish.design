@@ -17,3 +17,14 @@
     gap: 2em;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .tagPage {
+    gap: 1em;
+    height: auto;
+    
+    div {
+      gap: 1em;
+    }
+  }
+}

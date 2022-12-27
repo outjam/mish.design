@@ -1,0 +1,13 @@
+.tagPost {
+    width: -webkit-fit-content;
+    color: var(--txtGray);
+    border: 1px solid var(--separator);
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        background: #ffffff10;
+    }
+}
