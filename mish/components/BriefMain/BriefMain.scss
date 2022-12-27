@@ -1,0 +1,85 @@
+.briefMain {
+    width: 100%;
+    padding: 8em 2em 1em 2em;
+    animation: 1.2s alternate fadein;
+    
+    @keyframes fadein {
+        from {
+            margin-top: 64px;
+            opacity: 0;
+        }
+        to {
+            margin-top: 0%;
+            opacity: 1;
+        }
+    }
+    
+    h1 {
+        margin-bottom: 2em;
+    }
+    
+    form {
+        max-width: 50%;
+        margin-bottom: 8em;
+        
+        #selectedBriefList {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            
+            .selectedBrief {
+                background: var(--card);
+                color: var(--white);
+                font-weight: 400;
+                transition: 0.3s;
+                font-size: 16px;
+                &:hover {
+                    background: #ffffff35;
+                }
+                .active {
+                    background: var(--white) !important;
+                    color: var(--black) !important;
+                }
+            }
+        }
+
+        h6 {
+            margin-bottom: 0.5em;
+        }
+        .privacyInfoForm {
+            font-size: 12px;
+            line-height: 16px;
+            color: var(--txtGray);
+            max-width: 50%;
+            margin-top: 2em;
+        }
+        .input {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            padding: 1em;
+            border-bottom: 1px solid #ffffff15;
+            margin-bottom: 1em;
+            
+            label {
+                font-size: 12px;
+                line-height: 16px;
+                color: var(--txtGray);
+                text-transform: uppercase;
+            }
+            input {
+                background: none;
+                border: none;
+                outline: none;
+                font-size: 18px;
+                line-height: 24px;
+                color: var(--txt)
+            }
+            
+            &:hover {
+            background-color: #ffffff10;
+            }
+        }
+    }
+}
