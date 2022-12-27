@@ -1,0 +1,13 @@
+.cardBrand {
+  width: 320px;
+  height: 168px;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #ffffff10;
+  backdrop-filter: blur(32px);
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #ffffff16;
+  }
+}

@@ -1,0 +1,50 @@
+.card {
+  padding: 1em;
+  .card__image {
+    margin-bottom: 1em;
+  }
+  .card__image-project {
+    aspect-ratio: 1 / 1;
+    background-image: url("https://cdn.dribbble.com/users/4859/screenshots/15449379/media/d6dcddb4c8838d6d0e42610f4d3d8864.png");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .card__image-post {
+    aspect-ratio: 2 / 1;
+    background-color: darkolivegreen;
+  }
+  .card__content {
+    .card__content-attribution {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      margin-bottom: 1em;
+      .attribution {
+        color: var(--txtGray);
+      }
+    }
+    .body {
+      margin-bottom: 0.5em;
+    }
+    .description {
+      margin-bottom: 2em;
+    }
+  }
+  .card__tag {
+    margin-bottom: 2em;
+  }
+  .card__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0;
+    border-top: 1px solid var(--separator);
+    border-bottom: 1px solid var(--separator);
+  }
+
+  &::nth-of-type(2n) {
+    background-color: red;
+  }
+}

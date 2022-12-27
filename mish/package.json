@@ -1,0 +1,24 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@barba/core": "^2.9.7",
+    "gsap": "^3.11.3",
+    "locomotive-scroll": "^4.1.4",
+    "mouse-follower": "^1.1.2",
+    "next": "13.0.5",
+    "react": "18.2.0",
+    "react-creative-cursor": "^1.2.7",
+    "react-dom": "18.2.0",
+    "react-locomotive-scroll": "^0.2.2",
+    "sass": "^1.56.1",
+    "scss": "^0.2.4"
+  }
+}

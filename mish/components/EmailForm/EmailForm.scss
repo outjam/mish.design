@@ -1,0 +1,108 @@
+.emailForm {
+  width: 100%;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 2em;
+  grid-row-gap: 1em;
+
+  .video__emailForm {
+    .video__emailForm-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .form__emailForm {
+    height: 50vw;
+    padding: 8em 2em 4em 2em;
+
+    border-radius: 2em;
+    position: relative;
+    background-color: #ffffff08;
+    backdrop-filter: blur(64px);
+    border: 1px solid #ffffff10;
+    transition: 0.6s;
+
+    .bolt {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      margin: 0 auto;
+
+      .bolt_X_one {
+        width: 20px;
+        height: 2px;
+        background-color: blue;
+        transform: rotate(-45deg);
+      }
+      .bolt_X_two {
+        width: 20px;
+        height: 2px;
+        background-color: blue;
+        transform: rotate(45deg);
+      }
+    }
+
+    &:hover {
+      background-color: #ffffff10;
+    }
+  }
+  .buttonSendEmail {
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+  }
+  h3 {
+    width: 50%;
+  }
+  .bolt_top_right {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffffff15;
+    border-radius: 24px;
+    position: absolute;
+    top: 2em;
+    right: 2em;
+  }
+  .bolt_top_left {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffffff15;
+    border-radius: 24px;
+    position: absolute;
+    top: 2em;
+    left: 2em;
+  }
+  .bolt_bottom {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffffff15;
+    border-radius: 24px;
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .emailForm {
+    display: flex;
+    flex-direction: column;
+
+    .video__emailForm {
+      width: 100%;
+      height: calc(100vw - 2em);
+    }
+
+    .form__emailForm {
+      width: 100%;
+      height: 100%;
+      padding: 1em;
+      border: 1px solid var(--separator);
+    }
+  }
+}

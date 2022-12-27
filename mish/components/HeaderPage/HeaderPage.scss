@@ -1,0 +1,38 @@
+.headerPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1em;
+  width: 100%;
+  height: 360px;
+  padding: 1em 2em 0 2em;
+  transition: 0.3s;
+  z-index: 1000;
+
+  .headline {
+    font-size: 72px;
+    line-height: 80px;
+    transition: 0.3s;
+  }
+
+  div {
+    width: 100%;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--separator);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .headline {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .headerPage {
+    height: 240px;
+  }
+}

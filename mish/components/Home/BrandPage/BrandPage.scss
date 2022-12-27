@@ -1,0 +1,19 @@
+.brandPage {
+  width: 100%;
+  margin-top: 32em;
+  padding: 1em;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4em;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+  }
+}

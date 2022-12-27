@@ -1,0 +1,118 @@
+header {
+  width: 100%;
+  height: 64px;
+  padding: 1em 2em;
+  z-index: 1000;
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+.logo {
+  width: 64px;
+  height: 24px;
+  background-image: url("../../assets/mish.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1000;
+}
+.nav__button-bar {
+  display: none;
+}
+.nav__menu-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  row-gap: 4px;
+  cursor: pointer;
+}
+.nav__menu-bar div {
+  width: 24px;
+  height: 1px;
+  background-color: white;
+  border-radius: 2px;
+}
+.nav__menu-list {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  row-gap: 24px;
+  right: -100vw;
+  opacity: 0;
+  padding: 128px 1em;
+  transition: all 0.3s;
+  background: none;
+}
+.nav__menu-list.active {
+  right: 0;
+  opacity: 1;
+  background: black;
+}
+
+.nav__link {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 56px;
+  position: relative;
+  user-select: none;
+}
+.nav__action {
+  z-index: 1000;
+}
+.nav__link:hover {
+}
+
+@media screen and (min-width: 1024px) {
+  .nav__link {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    position: relative;
+  }
+  .nav__menu-bar {
+    display: none;
+  }
+  .nav__button-bar {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  .nav__menu-list {
+    position: unset;
+    flex-direction: row;
+    min-height: fit-content;
+    width: fit-content;
+    column-gap: 2em;
+    align-items: center;
+    opacity: 1;
+  }
+  .nav__link::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -0.5em;
+    left: 0;
+    background-color: white;
+    transition: all 0.3s;
+  }
+
+  .nav__link:hover:before {
+    width: 100%;
+  }
+}
