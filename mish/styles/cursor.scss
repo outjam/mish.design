@@ -151,3 +151,9 @@ $mf-color-text: #000 !default;
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .mf-cursor {
+    display: none !important;
+  }
+}

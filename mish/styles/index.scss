@@ -26,13 +26,24 @@ ul {
 // Component's
 @import "../components/NavBar/NavBar.scss"; // Header
 @import "../components/HeaderPage/HeaderPage.scss"; // HeaderPage
-@import "../components/Button/Button.scss"; // Button
+@import "../components/HeaderUser/HeaderUser.scss"; // HeaderUser
+@import "../components/HeaderProject/HeaderProject.scss"; // HeaderProject
 @import "../components/FilterPage/FilterPage.scss"; // FilterPage
 @import "../components/EmailForm/EmailForm.scss"; // EmailForm
 @import "../components/Footer/Footer.scss"; // Footer
 @import "../components/Card/Card.scss"; // Card
 @import "../components/Card/CardBrand.scss"; // CardBrand
+@import "../components/Card/CardAwards.scss"; // CardBrand
 @import "../components/Tag/Tag.scss"; // Tag
+@import "../components/Tag/TagPost.scss"; // TagPost
+@import "../components/BriefMain/BriefMain.scss"; // BriefMain
+
+@import "../components/Button/Button.scss"; // Button
+@import "../components/Button/ButtonMore.scss"; // ButtonMore
+@import "../components/Button/ButtonRed.scss"; // ButtonRed
+@import "../components/Button/ButtonBlue.scss"; // ButtonBlue
+@import "../components/Button/ButtonGray.scss"; // ButtonGray
+@import "../components/Button/ButtonOutline.scss"; // ButtonOutline
 
 // For Page Home
 @import "../components/Home/SliderPage/SliderPage.scss"; // sliderPage
@@ -41,3 +52,15 @@ ul {
 // Card 1 - 4 post
 @import "../components/Home/TagPage/TagPage.scss"; // TagPage
 // Card 4 - 8 post
+
+// For Page Company
+@import "../components/Company/CompanyMain.scss"; // companyMain
+@import "../components/Company/CompanyMisha"; // companyMisha
+@import "../components/Company/CompanyTeam"; // companyTeam
+@import "../components/Company/CompanyAwards"; // CompanyAwards
+
+// For Page Service
+@import "../components/ServiceMain/ServiceMain.scss"; // serviceMain
+
+// For Page Contact
+@import "../components/Contacts/Map.scss"; // companyMain
