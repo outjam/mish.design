@@ -6,14 +6,15 @@
   }
   .card__image-project {
     aspect-ratio: 1 / 1;
-    background-image: url("https://cdn.dribbble.com/users/4859/screenshots/15449379/media/d6dcddb4c8838d6d0e42610f4d3d8864.png");
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
   }
   .card__image-post {
     aspect-ratio: 2 / 1;
-    background-color: darkolivegreen;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .card__content {
     .card__content-attribution {

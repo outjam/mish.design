@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Card() {
+function Card({ project, id }) {
   useEffect(() => {
     gsap.to(".card__image", {
       duration: 10,
@@ -22,27 +22,30 @@ function Card() {
       },
     });
   }, []);
-
+  const { BackgroundImage, Attribute1, Attribute2, Title, Description, Tags, employer_list } = project.attributes.Project[0]
   return (
-    <Link className="card" href="/projectview" data-cursor-text="Смотреть">
-      <div className="card__image card__image-project"></div>
+    <Link className="card" href={`/projectview?id=${id}`} data-cursor-text="Смотреть">
+      <div className="card__image card__image-project" style={{
+        backgroundImage: `url("${process.env.STRAPI_HOST}${BackgroundImage.data.attributes.url}")`
+      }}></div>
       <div className="card__content">
         <div className="card__content-attribution">
-          <p className="attribution caption-1">Attribution 1</p>
-          <p className="attribution caption-1">Attribution 2</p>
+          <p className="attribution caption-1">{Attribute1}</p>
+          <p className="attribution caption-1">{Attribute2}</p>
         </div>
-        <p className="body body-1">Title</p>
-        <p className="description description-1">Description</p>
+        <p className="body body-1">{Title}</p>
+        <p className="description description-1">{Description}</p>
       </div>
       <div className="card__tag">
-        <TagPost name="Tag" />
-        <TagPost name="Tag" />
+        {
+          Tags.split(';').map((value) => (<TagPost name={value} />))
+        }
       </div>
       <div className="card__action">
         <Link href="/profile">
           <div className="card_action-person">
-            <img src="http://culture3k.com/avaUser.jpg" />
-            <p>Алёна Бирюкова</p>
+            <img src={`${process.env.STRAPI_HOST}${employer_list.data.attributes.Photo.data.attributes.url}`} />
+            <p>{employer_list.data.attributes.Name}</p>
           </div>
         </Link>
         <ButtonBlue name="Показать ещё" />

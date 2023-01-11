@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_basic_components_blog_cards",
+  "info": {
+    "displayName": "BlogCards",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Attribution1": {
+      "type": "string",
+      "required": true
+    },
+    "Attribution2": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Tags": {
+      "type": "string",
+      "required": true
+    },
+    "BackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employer-list.employer-list"
+    }
+  }
+}

@@ -31,7 +31,7 @@ function HeaderProject(props) {
         <span />
         <img
           className="coverUserSrc"
-          src="http://culture3k.com/coverProject.jpg"
+          src={`${process.env.STRAPI_HOST}${props.image}`}
         />
       </div>
       <div className="projectInfo">
@@ -39,8 +39,9 @@ function HeaderProject(props) {
         <h2>{props.name}</h2>
         <p className="description">{props.description}</p>
         <div className="card__tag">
-          <TagPost name="Tag" />
-          <TagPost name="Tag_2" />
+          {
+            props.tags.split(";").map((value) => (<TagPost name={value} />))
+          }
         </div>
       </div>
     </div>

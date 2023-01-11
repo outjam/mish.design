@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function ServiceMain() {
+function ServiceMain({ services }) {
   useEffect(() => {
     gsap.to(".unionProductDesign-video", {
       duration: 10,
@@ -34,84 +34,56 @@ function ServiceMain() {
         </ul>
       </nav>
       <div className="serviceMain_Content_List">
-        <div className="serviceMain_Content">
-          <div className="serviceMain_Content_Headline">
-            <h1>
-              Продуктовый
-              <br />
-              дизайн
-            </h1>
-            <span className="serviceMain_Content_Logo-Unit unionProductDesign"></span>
-            <span className="unionProductDesign-video">
+        {
+          services.map((value) => {
+            const {Title, Description, UnitServices, Video, tags, brands} = value.attributes.Unit;
+            return (
+                <div className="serviceMain_Content">
+                  <div className="serviceMain_Content_Headline">
+                    <h1>
+                      {Title}
+                    </h1>
+                    <span className="serviceMain_Content_Logo-Unit unionProductDesign"></span>
+                    <span className="unionProductDesign-video">
               <video
-                className="unionProductDesign-video"
-                src="https://culture3k.com/imac.mp4"
-                muted
-                autoPlay={"autoplay"}
-                preLoad="auto"
-                control="false"
-                loop
+                  className="unionProductDesign-video"
+                  src="https://culture3k.com/imac.mp4" // `${process.env.STRAPI_HOST}${Video.data[0].attributes.url}`
+                  muted
+                  autoPlay={"autoplay"}
+                  preLoad="auto"
+                  control="false"
+                  loop
               />
             </span>
-          </div>
-          <div className="serviceMain_Content_Description">
-            <p>
-              Проектирование личных кабинетов, сложные интерфейсы, адаптивный
-              веб-дизайн, бизнес-системы и дизайн мобильных приложений любой
-              сложности.
-            </p>
-            <div className="serviceMain_Content_Description_tag">
-              <ul>
-                <li>Ux</li>
-                <li>Ui</li>
-                <li>Mobile</li>
-                <li>Desktop</li>
-                <li>Research</li>
-                <li>Analysis</li>
-              </ul>
-            </div>
-          </div>
-          <div className="serviceMain_Content_Service-Info">
-            <h4>Услуги юнита</h4>
-            <ul>
-              <li>
-                <p>Проектирование интерфейсов сайтов, систем и приложений</p>
-              </li>
-              <li>
-                <p>
-                  Проведение UX аудита текущих решений и выявление проблем в
-                  интерфейсе
-                </p>
-              </li>
-              <li>
-                <p>Проведение исследований</p>
-              </li>
-              <li>
-                <p>
-                  Проведение юзабилити-тестирования для улучшения текущих и
-                  новых решений
-                </p>
-              </li>
-              <li>
-                <p>
-                  Работа с аналитикой и улучшение текущих показателей бизнеса
-                </p>
-              </li>
-              <li>
-                <p>Консалтинг в сфере UX и UI</p>
-              </li>
-            </ul>
-          </div>
-          <div className="serviceMain_Content_Service-Brand">
-            <CardBrand name="Логотип" />
-            <CardBrand name="Логотип" />
-            <CardBrand name="Логотип" />
-            <CardBrand name="Логотип" />
-            <CardBrand name="Логотип" />
-            <CardBrand name="Логотип" />
-          </div>
-          <ButtonBlue name="Подробнее о юните" />
-        </div>
+                  </div>
+                  <div className="serviceMain_Content_Description">
+                    <p>
+                      {Description}
+                    </p>
+                    <div className="serviceMain_Content_Description_tag">
+                      <ul>
+                        {tags.data.map(value => (<li>{value.attributes.Tag.Title}</li>))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="serviceMain_Content_Service-Info">
+                    <h4>Услуги юнита</h4>
+                    <ul>
+                      {
+                        UnitServices.split(';').map((value) => (<li><p>{value}</p></li>))
+                      }
+                    </ul>
+                  </div>
+                  <div className="serviceMain_Content_Service-Brand">
+                    {
+                      brands.data.map((value) => (<CardBrand name={value.attributes.Brand[0].Title} />))
+                    }
+                  </div>
+                  <ButtonBlue name="Подробнее о юните" />
+                </div>
+            )
+          })
+        }
         <div className="serviceMain_Content">
           <div className="serviceMain_Content_Headline">
             <h1>

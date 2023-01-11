@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function PostGridPage() {
+function PostGridPage({ projects }) {
   useEffect(() => {
     gsap.to(".cardSpacer1n", {
       duration: 10,
@@ -51,22 +51,17 @@ function PostGridPage() {
       y: -400,
     });
   }, []);
-
+  const displayedProjects = projects.filter((value) => value.attributes.MainPageDisplay)
   return (
     <>
       <div className="postGridPage">
-        <span className="cardSpacer1n">
-          <Card />
-        </span>
-        <span className="cardSpacer2n">
-          <Card />
-        </span>
-        <span className="cardSpacer3n">
-          <Card />
-        </span>
-        <span className="cardSpacer4n">
-          <Card />
-        </span>
+        {
+          displayedProjects.map((value, index) => (
+              <span className={`cardSpacer${index + 1}n`}>
+                <Card project={value} id={value.id}/>
+              </span>
+          ))
+        }
       </div>
       <div className="buttonMore_HomeMain">
         <Link href="/project">

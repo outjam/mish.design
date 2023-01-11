@@ -29,7 +29,7 @@ function CompanyMisha() {
         src="https://culture3k.com/Misha.mp4"
         muted
         autoPlay={"autoplay"}
-        preLoad="auto"
+        preload="auto"
         control="false"
         loop
       />

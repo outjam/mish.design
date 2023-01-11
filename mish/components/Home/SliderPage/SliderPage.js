@@ -50,8 +50,8 @@ function SliderPage() {
         src="https://culture3k.com/office.mp4"
         muted
         autoPlay={"autoplay"}
-        preLoad="auto"
-        control="false"
+        preload="auto"
+        controls={false}
         loop
       />
       <div className="headline">

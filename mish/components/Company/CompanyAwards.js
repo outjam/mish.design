@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function CompanyAwards() {
+function CompanyAwards({awards}) {
   useEffect(() => {
     gsap.to(".titleAwards", {
       opacity: 0,
@@ -22,7 +22,6 @@ function CompanyAwards() {
       },
     });
   }, []);
-
   return (
     <div className="companyAwardsSection">
       <h4 className="titleAwards">
@@ -30,12 +29,15 @@ function CompanyAwards() {
         различных сферах
       </h4>
       <div className="companyAwards">
-        <CardAwards
-          img="http://culture3k.com/goldApp.gif"
-          data="2022"
-          title="1 место премии «Золотое приложение»"
-          description="В номинации «Приложение для фитнеса»"
-        />
+        {
+          awards.map((value) => (<CardAwards
+              img={`${process.env.STRAPI_HOST}${value.attributes.Award.Image.data.attributes.url}`}
+              data={value.attributes.Award.Year}
+              title={value.attributes.Award.Title}
+              description={value.attributes.Award.Description}
+              tags={value.attributes.Award.Tags}
+          />))
+        }
         <CardAwards
           img="http://culture3k.com/goldApp.gif"
           data="2022"

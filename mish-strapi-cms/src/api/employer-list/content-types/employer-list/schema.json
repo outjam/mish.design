@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employer_lists",
+  "info": {
+    "singularName": "employer-list",
+    "pluralName": "employer-lists",
+    "displayName": "EmployerList",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Grade": {
+      "type": "string",
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "WorkStart": {
+      "type": "date",
+      "required": true
+    },
+    "Tags": {
+      "type": "text",
+      "required": true
+    },
+    "Photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

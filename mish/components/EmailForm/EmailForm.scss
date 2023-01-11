@@ -25,15 +25,24 @@
     backdrop-filter: blur(64px);
     border: 1px solid #ffffff10;
     transition: 0.6s;
-    
-    .privacyInfoForm {
-      font-size: 12px;
-      line-height: 16px;
-      color: var(--txtGray);
+
+    .privacyConatiner{
+      display: flex;
+      flex-direction: row;
       max-width: 75%;
       margin-top: 2em;
+
+      .privacyInfoForm {
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--txtGray);
+      }
+
+      .inputCheckBox {
+        margin-right: 6px;
+      }
     }
-    
+
     .input {
       display: flex;
       flex-direction: column;
@@ -66,6 +75,11 @@
     position: absolute;
     bottom: 2em;
     left: 2em;
+
+    .buttonBlue {
+      background: var(--blue);
+      color: var(--white);
+    }
   }
   h3 {
     width: 100%;

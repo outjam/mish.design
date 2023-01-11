@@ -20,7 +20,9 @@ function CardAwards(props) {
         <p className="description description-1">{props.description}</p>
       </div>
       <div className="card__tag">
-        <TagPost name="Tag" />
+        {
+          props.tags ? props.tags.split(';').map((value) => (<TagPost name={value} />)) : (<TagPost name="Tag" />)
+        }
       </div>
     </Link>
   );

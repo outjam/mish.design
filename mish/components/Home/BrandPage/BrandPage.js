@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function BrandPage() {
+function BrandPage({ brands }) {
   useEffect(() => {
     gsap.to(".brandPageOne", {
       scrollTrigger: {
@@ -40,35 +40,37 @@ function BrandPage() {
       x: -1200,
     });
   }, []);
-
   return (
     <div className="brandPage">
       <div className="brandPageOne">
-        <CardBrand name="Газпром"></CardBrand>
-        <CardBrand name="RadioPlayer"></CardBrand>
-        <CardBrand name="Восьмерка"></CardBrand>
-        <CardBrand name="Elife"></CardBrand>
-        <CardBrand name="Акра"></CardBrand>
-        <CardBrand name="МскГуру"></CardBrand>
-        <CardBrand name="Baza"></CardBrand>
+        {
+          brands.map((value, index) => {
+            if (index < 6) {
+              return (<CardBrand name={value.attributes.Brand[0].Title}></CardBrand>)
+            }
+            return null
+          })
+        }
       </div>
       <div className="brandPageTwo">
-        <CardBrand name="Альфабанк"></CardBrand>
-        <CardBrand name="MST"></CardBrand>
-        <CardBrand name="Nebula"></CardBrand>
-        <CardBrand name="Kaspersky"></CardBrand>
-        <CardBrand name="Газпром"></CardBrand>
-        <CardBrand name="Globus"></CardBrand>
-        <CardBrand name="SBI Bank"></CardBrand>
+        {
+          brands.map((value, index) => {
+            if (index > 6 && index < 13){
+              return (<CardBrand name={value.attributes.Brand[0].Title}></CardBrand>)
+            }
+            return null
+          })
+        }
       </div>
       <div className="brandPageThree">
-        <CardBrand name="Беговое сообщество"></CardBrand>
-        <CardBrand name="CheMexsol"></CardBrand>
-        <CardBrand name="Picksell"></CardBrand>
-        <CardBrand name="Юрист Сосед"></CardBrand>
-        <CardBrand name="Сател"></CardBrand>
-        <CardBrand name="Bitzlato"></CardBrand>
-        <CardBrand name="БКС"></CardBrand>
+        {
+          brands.map((value, index) => {
+            if (index > 13){
+              return (<CardBrand name={value.attributes.Brand[0].Title}></CardBrand>)
+            }
+            return null
+          })
+        }
       </div>
     </div>
   );

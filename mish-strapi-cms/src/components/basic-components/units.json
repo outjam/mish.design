@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_basic_components_units",
+  "info": {
+    "displayName": "Units"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Video": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "UnitServices": {
+      "type": "text",
+      "required": true
+    },
+    "brands": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::brand.brand"
+    }
+  }
+}

@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function CompanyTeam(props) {
+function CompanyTeam({ employers }) {
   useEffect(() => {
     gsap.to(".titleAwards", {
       opacity: 0,
@@ -21,92 +21,24 @@ function CompanyTeam(props) {
       },
     });
   }, []);
-
   return (
     <div className="companyTeamSection">
       <h4 className="titleAwards">
         Чтобы делать лучший продукт, мы работаем с лучшими специалистами
       </h4>
       <div className="companyTeam">
-        <Link href="/profile">
-          <div className="companyTeam_profile">
-            <img src="https://culture3k.com/profile_1.mp4" />
-            <p>Арсений Закиров</p>
-            <p>
-              <small>Лид 3д дизайна</small>
-            </p>
-          </div>
-        </Link>
-
-        <Link href="/profile">
-          <div className="companyTeam_profile">
-            <img src="https://culture3k.com/profile_2.mp4" />
-            <p>Имя Фамилия</p>
-            <p>
-              <small>Должность</small>
-            </p>
-          </div>
-        </Link>
-
-        <Link href="/profile">
-          <div className="companyTeam_profile">
-            <img src="https://culture3k.com/profile_3.mp4" />
-            <p>Имя Фамилия</p>
-            <p>
-              <small>Должность</small>
-            </p>
-          </div>
-        </Link>
-
-        <Link href="/profile">
-          <div className="companyTeam_profile">
-            <img src="https://culture3k.com/profile_4.mp4" />
-            <p>Имя Фамилия</p>
-            <p>
-              <small>Должность</small>
-            </p>
-          </div>
-        </Link>
-
-        <Link href="/profile">
-          <div className="companyTeam_profile">
-            <img src="https://culture3k.com/profile_5.mp4" />
-            <p>Имя Фамилия</p>
-            <p>
-              <small>Должность</small>
-            </p>
-          </div>
-        </Link>
-
-        <Link href="/profile">
-          <div className="companyTeam_profile">
-            <img src="https://culture3k.com/profile_6.mp4" />
-            <p>Имя Фамилия</p>
-            <p>
-              <small>Должность</small>
-            </p>
-          </div>
-        </Link>
-
-        <Link href="/profile">
-          <div className="companyTeam_profile">
-            <img src="https://culture3k.com/profile_7.mp4" />
-            <p>Имя Фамилия</p>
-            <p>
-              <small>Должность</small>
-            </p>
-          </div>
-        </Link>
-
-        <Link href="/profile">
-          <div className="companyTeam_profile">
-            <img src="https://culture3k.com/profile_8.mp4" />
-            <p>Имя Фамилия</p>
-            <p>
-              <small>Должность</small>
-            </p>
-          </div>
-        </Link>
+        {
+          employers.map((value, index) => {
+            return (<Link key={index} href="/profile">
+                  <div className="companyTeam_profile">
+                    <img src={`${process.env.STRAPI_HOST}${value.attributes.Employer[0].EmployeImage.data.attributes.url}`}/>
+                    <p>{value.attributes.Employer[0].EmployeName}</p>
+                    <p>
+                      <small>{value.attributes.Employer[0].Grade}</small>
+                    </p>
+                  </div>
+                </Link>)})
+        }
       </div>
     </div>
   );

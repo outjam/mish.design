@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_basic_components_cards",
+  "info": {
+    "displayName": "ProjectCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Attribute1": {
+      "type": "string",
+      "required": true
+    },
+    "Attribute2": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "BackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Tags": {
+      "type": "string"
+    },
+    "employer_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employer-list.employer-list"
+    },
+    "Mark": {
+      "type": "string"
+    }
+  }
+}

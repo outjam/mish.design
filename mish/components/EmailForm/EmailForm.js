@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import ButtonBlue from "../Button/ButtonBlue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
+import {CmsApi} from "../../services/strapi";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,7 +40,27 @@ function EmailForm() {
       y: -300,
     });
   }, []);
-
+  const [clientInfo, setClientInfo] = useState('')
+  const [clientEmail, setClientEmail] = useState('')
+  const [confirmed, setConfirmed] = useState(false)
+  const infoChange = (type, value) => {
+    switch (type) {
+      case 'name':
+        setClientInfo(value)
+        break;
+      case 'email':
+        value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) && setClientEmail(value)
+        break;
+      case 'checkbox':
+        setConfirmed(value)
+        break;
+      default:
+        break;
+    }
+  }
+  const userCreate = () => {
+    confirmed & CmsApi.createNewClient(clientInfo, clientEmail)
+  }
   return (
     <div className="emailForm">
       <div className="video__emailForm">
@@ -48,8 +69,8 @@ function EmailForm() {
           src="https://culture3k.com/bottle.mp4"
           muted
           autoPlay={"autoplay"}
-          control="false"
-          preLoad="auto"
+          controls={false}
+          preload="auto"
           loop
         />
       </div>
@@ -62,19 +83,22 @@ function EmailForm() {
         <form>
           <div className="input">
             <label for="fname">Имя и Фамилия</label>
-            <input type="text" id="fname" name="fname"></input>
+            <input type="text" id="fname" name="fname" onChange={(e) => infoChange('name', e.currentTarget.value)}></input>
           </div>
           <div className="input">
             <label for="fname">Электронная почта</label>
-            <input type="text" id="fname" name="fname"></input>
+            <input type="text" id="fname" name="fname" onChange={(e) => infoChange('email',e.currentTarget.value)}></input>
           </div>
-          <p className="privacyInfoForm">
-            Я согласен (на) с политикой конфиденциальности и даю согласие на
-            обработку персональных данных
-          </p>
+          <div className="privacyConatiner">
+            <input className="inputCheckBox" type="checkbox" onChange={(e) => infoChange('checkbox', !confirmed)}/>
+            <p className="privacyInfoForm">
+              Я согласен (на) с политикой конфиденциальности и даю согласие на
+              обработку персональных данных
+            </p>
+          </div>
         </form>
         <div className="buttonSendEmail">
-          <ButtonBlue name="Отправить" />
+          <button className="buttonBlue" onClick={() => userCreate()}>Отправить</button>
         </div>
       </div>
     </div>

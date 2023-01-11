@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_basic_components_employers_cards",
+  "info": {
+    "displayName": "EmployersCard"
+  },
+  "options": {},
+  "attributes": {
+    "EmployeImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "EmployeName": {
+      "type": "string",
+      "required": true
+    },
+    "Grade": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

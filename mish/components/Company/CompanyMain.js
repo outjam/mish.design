@@ -30,7 +30,7 @@ function CompanyMain() {
         src="http://culture3k.com/bubble.mp4"
         muted
         autoPlay={"autoplay"}
-        preLoad="auto"
+        preload="auto"
         loop
       />
     </div>

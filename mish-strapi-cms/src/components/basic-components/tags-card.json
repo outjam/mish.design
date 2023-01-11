@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_basic_components_tags_cards",
+  "info": {
+    "displayName": "TagsCard"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "CursourImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
